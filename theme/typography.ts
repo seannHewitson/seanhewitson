@@ -9,13 +9,5 @@ const outfit = Outfit({
 
 export const typography: TypographyOptions = {
   fontFamily: outfit.style.fontFamily,
-  allVariants: {
-    letterSpacing: '-0.05em',
-  },
-  h3: {
-    letterSpacing: '-0.05em !important',
-    '@media (max-width: 600px)': {
-      fontSize: '1.85rem',
-    },
-  },
+  allVariants: { lineHeight: 1.25 },
 }

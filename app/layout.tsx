@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material'
+import { Box, ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
@@ -29,13 +29,14 @@ const outfit = Outfit({
 
 export default async function Layout({ children }: LayoutProps) {
   return (
-    <html
-      lang='en'
-      style={{ fontFamily: outfit.style.fontFamily, letterSpacing: '-0.05em' }}
-    >
+    <html lang='en' style={{ fontFamily: outfit.style.fontFamily }}>
       <body>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <Box sx={{ margin: '0 auto', maxWidth: 800, pt: 10, width: '90%' }}>
+              {children}
+            </Box>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

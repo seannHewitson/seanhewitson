@@ -37,8 +37,7 @@ body {
 }
 
 body {
-  background: rgba(0, 0, 0, 0.85) !important;
-  min-height: 200vh;
+  background: rgba(0, 0, 0, 0.9) !important;
 }
 
 a {
