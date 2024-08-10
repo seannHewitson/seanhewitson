@@ -1,4 +1,4 @@
-import { Typography, styled } from '@mui/material'
+import { ListItemText, Typography, styled } from '@mui/material'
 
 export const Comment = styled(Typography)({
   position: 'relative',
@@ -12,5 +12,15 @@ export const Comment = styled(Typography)({
     content: '"// "',
     position: 'absolute',
     left: '-2rem',
+  },
+})
+
+export const ItemText = styled(ListItemText)({
+  '& span': {
+    alignItems: 'center',
+    display: 'flex',
+    '& svg': {
+      marginLeft: '0.5rem',
+    },
   },
 })

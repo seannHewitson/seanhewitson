@@ -3,6 +3,7 @@
 import Image from 'next/image'
 
 import { Intro } from 'components/intro'
+import { Showcase } from 'components/showcase'
 import { Skills } from 'components/skills'
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
       />
       <Intro />
       <Skills />
+      <Showcase />
     </div>
   )
 }
