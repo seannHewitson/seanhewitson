@@ -5,6 +5,7 @@ import { Box, List, ListItem, ListItemIcon, Typography } from '@mui/material'
 import Image from 'next/image'
 
 import { skills } from './constants'
+import { Skill } from './skill'
 import { Comment, ItemText } from './styles'
 
 export const Skills = () => (
@@ -26,53 +27,28 @@ export const Skills = () => (
         >
           {set.charAt(0).toUpperCase() + set.slice(1)}
         </Typography>
-        <Box sx={{ position: 'relative', height: 100, maxWidth: '90vw' }}>
+        <Box sx={{ height: 100, maxWidth: '90vw' }}>
           <Box
             sx={{
               position: 'absolute',
-              width: { xs: '100vw', sm: 'calc(100vw - 400px)' },
-              left: { xs: '-9vw', sm: -400 },
+              width: '100vw',
+              left: 0,
               px: { xs: '9vw', sm: '400px' },
+              pb: 2,
+              pr: '400px',
               overflowX: 'auto',
               overflowY: 'hidden',
               whiteSpace: 'nowrap',
+              textAlign: 'center',
             }}
           >
             <List sx={{ mt: 2 }}>
-              {skills.map(({ favourite, icon, name }) => (
-                <ListItem
-                  key={name}
-                  sx={{
-                    display: 'inline-block',
-                    width: 'unset',
-                    textAlign: 'center',
-                    '&:last-child': { mr: { xs: '9vw', sm: '300px' } },
-                  }}
-                >
-                  {icon && (
-                    <ListItemIcon
-                      sx={{ minWidth: 'unset', mr: 1, position: 'relative' }}
-                    >
-                      <Image
-                        alt={name}
-                        height='40'
-                        src={`/${icon}`}
-                        width='40'
-                      />
-                      {favourite && (
-                        <StarRounded
-                          style={{
-                            color: '#FBB13C',
-                            position: 'absolute',
-                            top: -10,
-                            left: 25,
-                          }}
-                        />
-                      )}
-                    </ListItemIcon>
-                  )}
-                  <ItemText>{name}</ItemText>
-                </ListItem>
+              {skills.map((skill) => (
+                <Skill
+                  key={skill.name}
+                  scrollable={skills.length > 9}
+                  {...skill}
+                />
               ))}
             </List>
           </Box>

@@ -8,7 +8,7 @@ import { Skills } from 'components/skills'
 
 export default function Page() {
   return (
-    <div>
+    <div style={{ paddingBottom: '2rem' }}>
       <Image
         alt='logo'
         height='66'
