@@ -20,7 +20,7 @@ export const Images = ({ images }: { images: string[] }) => {
           overflowX: 'auto',
           overflowY: 'hidden',
           whiteSpace: 'nowrap',
-          height: '350px',
+          height: { xs: '200px', sm: '350px' },
           gap: 2,
           position: 'relative',
         }}
