@@ -85,7 +85,16 @@ export const projects: Project[] = [
           'Initially I had Designed the payment & ticketing system to work around Revolut, however the business was rejected by Revolut for their business account. In the end I had to redesign the payment & ticketing system to work with Viva payments.',
       },
     ],
-    images: ['lootlink.png', 'lootlink-mobile.png'],
+    images: [
+      'lootlink-public.gif',
+      'lootlink-public-mobile.gif',
+      'lootlink-admin.png',
+      'lootlink-admin-mobile1.png',
+      'lootlink-admin-mobile2.png',
+      'lootlink-account.png',
+      'lootlink-account-mobile1.png',
+      'lootlink-account-mobile2.png',
+    ],
     url: 'https://lootlink.co.uk',
     stack: [
       { icon: 'axios.svg', name: 'Axios', favourite },

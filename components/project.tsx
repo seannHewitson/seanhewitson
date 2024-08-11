@@ -4,6 +4,7 @@ import { ArrowRightAltRounded, LanguageRounded } from '@mui/icons-material'
 import { Box, Button, List, Typography } from '@mui/material'
 
 import { Project as ProjectProps } from './constants'
+import { Images } from './images'
 import { ReadMore } from './readmore'
 import { Skill } from './skill'
 
@@ -70,10 +71,11 @@ export const Project = ({
           }}
         >
           {stack.map((tech) => (
-            <Skill key={tech.name} fontSize='.75rem' size={20} {...tech} />
+            <Skill fontSize='.75rem' key={tech.name} size={20} {...tech} />
           ))}
         </List>
       </Box>
+      <Images images={images} />
       <Box>
         <Typography
           sx={{
@@ -88,8 +90,8 @@ export const Project = ({
           Obstacles:
         </Typography>
         {obstacles.map(({ area, description }) => (
-          <Box sx={{ textAlign: 'justify', mb: 2 }}>
-            <Typography key={area} sx={{ fontWeight: 'bold' }} variant='body1'>
+          <Box key={area} sx={{ textAlign: 'justify', mb: 2 }}>
+            <Typography sx={{ fontWeight: 'bold' }} variant='body1'>
               {area}:
             </Typography>
             <ReadMore

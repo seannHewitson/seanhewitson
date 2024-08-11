@@ -17,7 +17,7 @@ export const Showcase = () => (
     </Typography>
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       {projects.map((project) => (
-        <Project {...project} key={project.name} />
+        <Project key={project.name} {...project} />
       ))}
     </Box>
   </Box>
