@@ -18,7 +18,7 @@ export const Comment = styled(Typography)({
 export const ItemText = styled(ListItemText)({
   '& span': {
     alignItems: 'center',
-    display: 'flex',
+    display: 'inline-flex',
     '& svg': {
       marginLeft: '0.5rem',
     },

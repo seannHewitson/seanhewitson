@@ -1,26 +1,28 @@
 import { Skill } from 'types'
 
+const favourite = true
+
 export const frameworks: Skill[] = [
   { icon: 'asp.svg', name: 'ASP.NET' },
   { icon: 'express.svg', name: 'Express' },
-  { icon: 'next-js.svg', name: 'Next.js', favourite: true },
-  { icon: 'react.svg', name: 'React', favourite: true },
+  { icon: 'next-js.svg', name: 'Next.js', favourite },
+  { icon: 'react.svg', name: 'React', favourite },
   { icon: 'nestjs.svg', name: 'NestJS' },
-  { icon: 'node.svg', name: 'Node.js', favourite: true },
+  { icon: 'node.svg', name: 'Node.js', favourite },
   { icon: 'laravel.svg', name: 'Laravel' },
   { icon: 'koa.svg', name: 'Koa' },
 ]
 
 export const languages: Skill[] = [
   { icon: 'c.svg', name: 'C#' },
-  { icon: 'css.svg', name: 'CSS', favourite: true },
+  { icon: 'css.svg', name: 'CSS', favourite },
   { icon: 'html.svg', name: 'HTML' },
   { icon: 'java.svg', name: 'Java' },
-  { icon: 'js.svg', name: 'JavaScript', favourite: true },
+  { icon: 'js.svg', name: 'JavaScript', favourite },
   { icon: 'php.svg', name: 'PHP' },
   { icon: 'python.svg', name: 'Python' },
-  { icon: 'sql.svg', name: 'SQL (T-SQL, PostgreSQL, MySQL)' },
-  { icon: 'ts.svg', name: 'TypeScript', favourite: true },
+  { icon: 'sql.svg', name: 'SQL', favourite },
+  { icon: 'ts.svg', name: 'TypeScript', favourite },
 ]
 
 export const other: Skill[] = [
@@ -30,7 +32,7 @@ export const other: Skill[] = [
   { icon: 'git.svg', name: 'Git' },
   { icon: 'jest.svg', name: 'Jest' },
   { icon: 'linux.svg', name: 'Linux' },
-  { icon: 'mui.svg', name: 'Material-UI' },
+  { icon: 'mui.svg', name: 'Material-UI', favourite },
   { icon: 'mongodb.svg', name: 'MongoDB' },
   // { icon: 'next-ui.svg', name: 'Next UI' },
   { icon: 'nginx.svg', name: 'NGINX' },
@@ -38,10 +40,10 @@ export const other: Skill[] = [
   { icon: 'redux.svg', name: 'Redux' },
   { icon: 'resend.svg', name: 'Resend' },
   { icon: 'socketio.svg', name: 'Socket.IO' },
-  { icon: 'supabase.svg', name: 'Supabase', favourite: true },
+  { icon: 'supabase.svg', name: 'Supabase', favourite },
   { icon: 'storybook.svg', name: 'Storybook' },
   { icon: 'styled-components.svg', name: 'Styled Components' },
-  { icon: 'vercel.svg', name: 'Vercel' },
+  { icon: 'vercel.svg', name: 'Vercel', favourite },
   { name: 'The list goes on...' },
 ]
 
