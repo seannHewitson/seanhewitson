@@ -35,7 +35,7 @@ export const Skill = ({
         <Image
           alt={name}
           height={`${size}`}
-          src={`/${icon}`}
+          src={`/icons/${icon}`}
           width={`${size}`}
         />
         {favourite && (

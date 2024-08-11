@@ -34,9 +34,23 @@ export const Intro = () => (
         Hobby Coder
       </Typography>{' '}
       with over 5 years of experience working in tech. Senior Software Engineer
-      at <Link href='https://rosearcheducation.com'>Rose Arch Education</Link>/
-      <Link href='https://thinkingmatters.com'>Thinking Matters</Link>, creating
-      and managing the user facing applications and services.
+      at{' '}
+      <Link
+        href='https://rosearcheducation.com'
+        rel='noreferrer noopener'
+        target='_blank'
+      >
+        Rose Arch Education
+      </Link>
+      /
+      <Link
+        href='https://thinkingmatters.com'
+        rel='noreferrer noopener'
+        target='_blank'
+      >
+        Thinking Matters
+      </Link>
+      , creating and managing the user facing applications and services.
     </Typography>
     <Typography
       sx={{ fontSize: '1.5rem', textAlign: 'justify', mb: 4 }}

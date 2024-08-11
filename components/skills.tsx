@@ -1,12 +1,10 @@
 'use client'
 
-import { StarRounded } from '@mui/icons-material'
-import { Box, List, ListItem, ListItemIcon, Typography } from '@mui/material'
-import Image from 'next/image'
+import { Box, List, Typography } from '@mui/material'
 
 import { skills } from './constants'
 import { Skill } from './skill'
-import { Comment, ItemText } from './styles'
+import { Comment } from './styles'
 
 export const Skills = () => (
   <Box sx={{ mt: 8 }}>
