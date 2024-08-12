@@ -1,5 +1,7 @@
 import { Box, ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
 
@@ -43,6 +45,12 @@ export default async function Layout({ children }: LayoutProps) {
             <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   )
