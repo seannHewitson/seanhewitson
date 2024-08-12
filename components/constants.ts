@@ -117,7 +117,12 @@ export const projects: Project[] = [
     <br />
     <br />
     - This project has been temporarily put on hold whilst I work on more important projects. Eventually I will return to it with some great new features. (Swipe to match with your partner/friends/housemates on what to watch next, movies, games, etc)`,
-    images: ['seann-tv.png', 'seann-tv-mobile.png'],
+    images: [
+      'seann-tv.gif',
+      'seann-tv-mobile.gif',
+      'seann-tv-profile.gif',
+      'seann-tv-profile-mobile.gif',
+    ],
     url: 'https://seann.tv',
     obstacles: [
       {

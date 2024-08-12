@@ -17,7 +17,6 @@ export const Skill = ({
   favourite,
   fontSize = '1rem',
   icon,
-  scrollable,
   size = 40,
 }: SkillProps) => (
   <ListItem
@@ -25,9 +24,7 @@ export const Skill = ({
       display: 'inline-block',
       width: 'unset',
       textAlign: 'center',
-      ...(scrollable && {
-        '&:last-child': { mr: { xs: '9vw', sm: '300px' } },
-      }),
+      userSelect: 'none',
     }}
   >
     {icon && (
@@ -36,6 +33,7 @@ export const Skill = ({
           alt={name}
           height={`${size}`}
           src={`/icons/${icon}`}
+          style={{ pointerEvents: 'none' }}
           width={`${size}`}
         />
         {favourite && (

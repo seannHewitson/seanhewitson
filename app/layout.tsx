@@ -3,6 +3,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
 
+import { Footer } from 'components/footer'
 import theme from 'theme'
 
 import './index.css'
@@ -33,9 +34,13 @@ export default async function Layout({ children }: LayoutProps) {
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Box sx={{ margin: '0 auto', maxWidth: 800, pt: 10, width: '90%' }}>
+            <Box
+              component='main'
+              sx={{ margin: '0 auto', maxWidth: 800, pt: 10, width: '90%' }}
+            >
               {children}
             </Box>
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

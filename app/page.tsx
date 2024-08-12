@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 
+import { Contact } from 'components/contact'
 import { Intro } from 'components/intro'
 import { Showcase } from 'components/showcase'
 import { Skills } from 'components/skills'
@@ -19,6 +20,7 @@ export default function Page() {
       <Intro />
       <Skills />
       <Showcase />
+      <Contact />
     </div>
   )
 }

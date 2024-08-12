@@ -1,10 +1,11 @@
 'use client'
 
-import { ArrowRightAltRounded, LanguageRounded } from '@mui/icons-material'
-import { Box, Button, List, Typography } from '@mui/material'
+import { LanguageRounded } from '@mui/icons-material'
+import { Box, List, Typography } from '@mui/material'
 
 import { Project as ProjectProps } from './constants'
 import { Images } from './images'
+import { LinkButton } from './linkButton'
 import { ReadMore } from './readmore'
 import { Skill } from './skill'
 
@@ -28,28 +29,9 @@ export const Project = ({
     }}
   >
     <Box>
-      <Button
-        color='inherit'
-        endIcon={<ArrowRightAltRounded />}
-        href={url}
-        startIcon={<LanguageRounded />}
-        sx={{
-          fontWeight: 'bold',
-          transition: 'all .5s',
-          '& .MuiButton-endIcon': {
-            width: '0px',
-            overflow: 'hidden',
-            transition: 'width .5s',
-          },
-          '&:hover': {
-            color: '#009DFF',
-            '& .MuiButton-endIcon': { width: '20px' },
-          },
-        }}
-        variant='text'
-      >
+      <LinkButton href={url} startIcon={<LanguageRounded />}>
         {name}
-      </Button>
+      </LinkButton>
       <ReadMore
         content={description}
         sx={{ textAlign: 'justify' }}
