@@ -50,6 +50,7 @@ export const Scroller = ({ ListProps, children, ...rest }: ScrollerProps) => {
       <List
         {...ListProps}
         onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseUp}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         ref={scroller}
