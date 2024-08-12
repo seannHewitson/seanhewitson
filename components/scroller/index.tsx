@@ -1,8 +1,10 @@
 'use client'
 
 import { SwipeRounded } from '@mui/icons-material'
-import { Box, BoxProps, List, ListProps, Typography } from '@mui/material'
+import { Box, BoxProps, ListProps } from '@mui/material'
 import React from 'react'
+
+import { ClickIndicator, List, SwipeIndicator } from './styles'
 
 type ScrollerProps = BoxProps & {
   ListProps?: ListProps
@@ -54,45 +56,15 @@ export const Scroller = ({ ListProps, children, ...rest }: ScrollerProps) => {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         ref={scroller}
-        sx={{
-          maxWidth: '100%',
-          overflowX: 'auto',
-          overflowY: 'hidden',
-          whiteSpace: 'nowrap',
-          gap: 2,
-          position: 'relative',
-          ...ListProps?.sx,
-        }}
       >
         {children}
       </List>
-      <Typography
-        color='text.secondary'
-        sx={{
-          mt: 2,
-          fontStyle: 'italic',
-          '@media (pointer:none), (pointer:coarse)': {
-            display: 'none',
-          },
-        }}
-        variant='body2'
-      >
+      <ClickIndicator color='text.secondary' variant='body2'>
         <SwipeRounded /> Click and drag to scroll through.
-      </Typography>
-      <Typography
-        color='text.secondary'
-        sx={{
-          display: 'none',
-          mt: 2,
-          fontStyle: 'italic',
-          '@media (pointer:none), (pointer:coarse)': {
-            display: 'block',
-          },
-        }}
-        variant='body2'
-      >
+      </ClickIndicator>
+      <SwipeIndicator color='text.secondary' variant='body2'>
         <SwipeRounded /> Swipe to scroll through.
-      </Typography>
+      </SwipeIndicator>
     </Box>
   )
 }

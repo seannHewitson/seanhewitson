@@ -1,22 +1,20 @@
 'use client'
 
 import { EmailRounded, LinkedIn } from '@mui/icons-material'
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 
-import { LinkButton } from './linkButton'
-import { Comment } from './styles'
+import { LinkButton } from '../linkButton'
+import { Comment } from '../styles'
+import { ButtonContainer, Subtitle } from './styles'
 
 export const Contact = () => (
   <Box>
-    <Comment>How to contact me</Comment>
-    <Typography
-      sx={{ fontSize: '1.25rem', textAlign: 'justify', mb: 2 }}
-      variant='subtitle1'
-    >
+    <Comment>How you can contact me</Comment>
+    <Subtitle variant='subtitle1'>
       I am not an active social media user, so you can contact me by any of the
       following;
       <br />
-      <Box sx={{ display: 'flex', gap: 2 }}>
+      <ButtonContainer>
         <LinkButton
           href='mailto:seannhewitson@icloud.com'
           startIcon={<EmailRounded />}
@@ -29,7 +27,7 @@ export const Contact = () => (
         >
           LinkedIn
         </LinkButton>
-      </Box>
-    </Typography>
+      </ButtonContainer>
+    </Subtitle>
   </Box>
 )

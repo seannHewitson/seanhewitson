@@ -1,6 +1,7 @@
 import { ArrowRightAltRounded } from '@mui/icons-material'
-import { Button } from '@mui/material'
 import React from 'react'
+
+import { Button } from './styles'
 
 type LinkButtonProps = React.PropsWithChildren<{
   href: string
@@ -11,20 +12,7 @@ export const LinkButton = (props: LinkButtonProps) => (
   <Button
     color='inherit'
     endIcon={<ArrowRightAltRounded />}
-    rel='noreferrer noopener'
-    sx={{
-      fontWeight: 'bold',
-      transition: 'all .5s',
-      '& .MuiButton-endIcon': {
-        width: '0px',
-        overflow: 'hidden',
-        transition: 'width .5s',
-      },
-      '&:hover': {
-        color: '#009DFF',
-        '& .MuiButton-endIcon': { width: '20px' },
-      },
-    }}
+    // @ts-ignore
     target='_blank'
     variant='text'
     {...props}
