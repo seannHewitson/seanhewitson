@@ -1,6 +1,6 @@
 'use client'
 
-import { GitHub, Male, PlaceRounded } from '@mui/icons-material'
+import { GitHub, PlaceRounded } from '@mui/icons-material'
 import { Box, Link } from '@mui/material'
 
 import { Comment } from '../styles'
