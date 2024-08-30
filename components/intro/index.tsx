@@ -57,10 +57,6 @@ export const Intro = () => (
         </Link>
       </Info>
       <Info>
-        <Male />
-        He/Him
-      </Info>
-      <Info>
         <PlaceRounded />
         United Kingdom
       </Info>
