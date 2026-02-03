@@ -108,7 +108,7 @@ export const Role: React.FC<RoleProps> = ({
         ))}
 
         <Accordion
-          sx={{ bgcolor: 'transparent', boxShadow: 'none', mt: 2 }}
+          sx={{ bgcolor: 'transparent', boxShadow: 'none', mt: 2, backgroundImage: 'unset' }}
           onChange={(e, isOpen) => setOpen(isOpen)}
         >
           <AccordionSummary
