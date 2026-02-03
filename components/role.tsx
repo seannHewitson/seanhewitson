@@ -152,16 +152,14 @@ export const Role: React.FC<RoleProps> = ({
           <AccordionDetails
             sx={{
               transition: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
-              background: mode === 'light' ? 'white' : '#B8A994',
+              background: ({ palette }) => mode === 'light' ? 'white' : `${palette.background.paper}C0`,
               border: ({ palette }) => `1px solid ${palette.divider}`,
               borderRadius: 2,
               mt: 1,
             }}
           >
             <Stack direction='row' flexWrap='wrap' sx={{ px: 2.5, pt: 2 }}>
-              {stack?.map((name, index) => {
-                const icon = technologies[name as keyof typeof technologies]
-                return (
+              {stack?.map((name: keyof typeof technologies, index) => (
                   <Tooltip key={index} title={name} arrow>
                     <Box
                       sx={{
@@ -172,11 +170,11 @@ export const Role: React.FC<RoleProps> = ({
                         mb: 3,
                       }}
                     >
-                      {icon ?? name}
+                      {technologies[name] ?? name}
                     </Box>
                   </Tooltip>
                 )
-              })}
+              )}
             </Stack>
           </AccordionDetails>
         </Accordion>
