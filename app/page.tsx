@@ -1,26 +1,17 @@
-'use client'
+import { Bots } from 'components/sections/bots'
+import { Experience } from 'components/sections/experience'
+import { Hero } from 'components/sections/hero'
+import { Packages } from 'components/sections/packages'
+import { Projects } from 'components/sections/projects'
 
-import Image from 'next/image'
-
-import { Contact } from 'components/contact'
-import { Intro } from 'components/intro'
-import { Showcase } from 'components/showcase'
-import { Skills } from 'components/skills'
-
-export default function Page() {
+export default function Home() {
   return (
-    <div style={{ paddingBottom: '2rem' }}>
-      <Image
-        alt='logo'
-        height='66'
-        src='/logo.png'
-        style={{ marginBottom: '3rem' }}
-        width='244'
-      />
-      <Intro />
-      <Skills />
-      <Showcase />
-      <Contact />
-    </div>
+    <>
+      <Hero />
+      <Projects />
+      <Bots />
+      <Packages />
+      <Experience />
+    </>
   )
 }

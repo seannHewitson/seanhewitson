@@ -1,56 +1,78 @@
-import { Box, ThemeProvider } from '@mui/material'
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
 
+import './globals.css'
+
+import { Box, Divider } from '@mui/material'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter'
+
 import { Footer } from 'components/footer'
-import theme from 'theme'
-
-import './index.css'
-
-type LayoutProps = Readonly<{ children: React.ReactNode }>
-
-export const metadata: Metadata = {
-  icons: {
-    icon: '/favicon.ico',
-  },
-  metadataBase: new URL('https://seanhewitson.com'),
-  title: {
-    template: '%s | Sean Hewitson',
-    default: 'Sean Hewitson',
-  },
-  description: 'Sean Hewitson, Full-Stack developer, Tech Enthusiast.',
-}
+import { Navigation } from 'components/navigation'
+import { ThemeProvider } from 'context/theme'
 
 const outfit = Outfit({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-outfit',
 })
 
-export default async function Layout({ children }: LayoutProps) {
+export const metadata: Metadata = {
+  icons: {
+    icon: '/favicon.ico',
+  },
+  title: {
+    default: 'Sean Hewitson',
+    template: '%s | Sean Hewitson',
+  },
+  description: 'Sean Hewitson, Full-Stack Developer',
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang='en' style={{ fontFamily: outfit.style.fontFamily }}>
-      <body>
+    <html lang='en' style={{ height: '100%' }}>
+      <body
+        className={outfit.variable}
+        style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+      >
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider>
             <Box
-              component='main'
-              sx={{ margin: '0 auto', maxWidth: 800, pt: 10, width: '90%' }}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+              }}
             >
-              {children}
+              <Navigation />
+              <Box
+                component='main'
+                sx={{
+                  maxWidth: 900,
+                  margin: '0 auto',
+                  padding: { xs: '2rem 1rem', md: '4rem 2rem' },
+                  pt: { xs: 4, md: 10 },
+                  flex: 1,
+                  width: '100%',
+                }}
+              >
+                {children}
+              </Box>
+              <Divider
+                sx={{
+                  width: '100%',
+                  maxWidth: { xs: 804, md: 772 },
+                  margin: '0 auto',
+                }}
+              />
+              <Footer />
             </Box>
-            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        )}
       </body>
     </html>
   )

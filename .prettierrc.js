@@ -7,11 +7,15 @@ module.exports = {
   arrowParens: 'always',
   endOfLine: 'auto',
   jsxSingleQuote: true,
-  plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
+  plugins: [require.resolve('@ianvs/prettier-plugin-sort-imports')],
   importOrder: [
-    '^((actions)|(app)|(components)|(context)|(config)|(theme)|(types)|(utils))(.*)$',
+    '<THIRD_PARTY_MODULES>',
+    '',
+    '^((app)|(components)|(context)|(theme))(.*)$',
+    '',
     '^((./)|(../))(.*)$',
   ],
   importOrderSeparation: true,
+  importOrderCaseSensitive: true,
   importOrderSortSpecifiers: true,
 }
