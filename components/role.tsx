@@ -152,7 +152,7 @@ export const Role: React.FC<RoleProps> = ({
           <AccordionDetails
             sx={{
               transition: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
-              background: ({ palette }) => mode === 'light' ? 'white' : `${palette.background.paper}C0`,
+              background: ({ palette }) => mode === 'light' ? 'white' : `${palette.text.secondary}C0`,
               border: ({ palette }) => `1px solid ${palette.divider}`,
               borderRadius: 2,
               mt: 1,
