@@ -4,7 +4,7 @@ A one-page, statically generated Astro portfolio. No client-side framework is sh
 
 ## Local development
 
-Requires Node.js 22.12 or newer.
+Requires Node.js 24.x (also selected for Vercel through package.json).
 
 ```sh
 npm install
