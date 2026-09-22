@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sean Hewitson — portfolio
 
-## Getting Started
+A one-page, statically generated Astro portfolio. No client-side framework is shipped; the only browser script handles the screenshot dialog, print button, and colour theme preference.
 
-First, run the development server:
+## Local development
 
-```bash
+Requires Node.js 22.12 or newer.
+
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/data/portfolio.ts`: employment, technologies, and packages.
+- `src/pages/index.astro`: page content, project links, metadata, and small interactions.
+- `src/styles/global.css`: responsive layout and résumé print styles.
+- `public/images`: optimised WebP project screenshots.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Use **Print / save résumé** in the Experience section to open the browser's print dialog. The print stylesheet produces an employment-and-skills résumé, with name and contact information.
 
-## Learn More
+## Content provenance
 
-To learn more about Next.js, take a look at the following resources:
+Reviewed on 22 September 2026.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Existing biography, social links, employment dates and achievements, packages, and bot projects: https://seanhewitson.com.
+- Bixo renamed to TV tiempo, and LootLink marked retired without a live link, per Sean's instructions.
+- Bookahead description: https://www.bookahead.co.uk and the existing Bookahead source.
+- Technologies verified against local Bookahead booking-app/platform/data and TV tiempo package manifests, along with technologies on the original portfolio. Tools listed do not imply a particular proficiency rating.
+- TV tiempo and Bookahead main screenshots captured from their public websites. Bookahead storefront screenshot reused from the existing marketing project's `public/screenshots/storefront-desktop.png`.
+- Employment dates are retained from the existing portfolio, including Instinct Digital's current position.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The production canonical origin is `https://seanhewitson.com`. Keep `astro.config.mjs`, page canonical/schema/Open Graph URLs, and `public/robots.txt` aligned if the domain changes.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`npm run build` outputs static files in `dist/`, suitable for static hosting. Configure your hosting provider to run `npm run build` and publish `dist/`. The site needs no server runtime or environment variables.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Colour themes
+
+The header offers Light, Dark, and System. System is the default and responds live to operating-system changes. Explicit preferences persist in localStorage and sync across tabs. An early head script resolves the theme before the page renders; storage restrictions fall back gracefully. Print styles always use a light palette.
